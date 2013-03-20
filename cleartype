@@ -26,7 +26,7 @@ echo 'ClearOS'
 cd SystemUI
 cp res/$dh/*.png ../../../frameworks/base/packages/SystemUI/res/$dh/
 cp res/$dx/*.png ../../../frameworks/base/packages/SystemUI/res/$dx/
-cp res/layout/status_bar_recent_item.xml ../../../frameworks/base/packages/SystemUI/res/layout/
+cp res/layout/*.xml ../../../frameworks/base/packages/SystemUI/res/layout/
 cp res/values/*.xml ../../../frameworks/base/packages/SystemUI/res/values/
 cp src/recent/*.java ../../../frameworks/base/packages/SystemUI/src/com/android/systemui/recent/
 
