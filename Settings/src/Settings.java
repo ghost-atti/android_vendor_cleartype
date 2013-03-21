@@ -128,7 +128,7 @@ public class Settings extends PreferenceActivity
             R.id.lock_screen_settings,
             R.id.system_settings,
             R.id.cleartype_section,
-            R.id.cleartype_settings
+            R.id.cleartype_settings,
             R.id.cleartype_info
     };
 
