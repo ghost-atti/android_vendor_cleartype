@@ -20,8 +20,13 @@ dh=drawable-hdpi
 dx=drawable-xhdpi
 mh=mipmap-hdpi
 mx=mipmap-xhdpi
-
-echo 'ClearOS'
+echo '=====  =====     ===      ==        =='
+echo '  I    I        /   \     I \      / I'
+echo '  I    =====   /=====\    I  \    /  I'
+echo '  I    I      /       \   I   \  /   I'
+echo '  I    ===== /         \  I    ==    I'
+echo '             Clear Type               '
+echo '              ClearOS                 '
 
 echo 'Settings.apk'
 cd Settings
