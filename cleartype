@@ -23,6 +23,7 @@ mx=mipmap-xhdpi
 
 echo 'ClearOS'
 
+echo 'Settings.apk'
 cd Settings
 cp res/drawable/*.png ../../../packages/apps/Settings/res/drawable/
 cp res/layout/*.xml ../../../packages/apps/Settings/res/layout/
@@ -31,6 +32,7 @@ cp res/xml/*.xml ../../../packages/apps/Settings/res/xml/
 cp src/*.java ../../../packages/apps/Settings/src/com/android/settings/
 cd ..
 
+echo 'SystemUI.apk'
 cd SystemUI
 cp res/$dh/*.png ../../../frameworks/base/packages/SystemUI/res/$dh/
 cp res/$dx/*.png ../../../frameworks/base/packages/SystemUI/res/$dx/
@@ -40,11 +42,13 @@ cp src/recent/*.java ../../../frameworks/base/packages/SystemUI/src/com/android/
 
 cd ..
 
+echo 'framework-res.apk'
 cd framework
 cp $dh/*.png ../../../frameworks/base/core/res/res/$dh/
 cp $dx/*.png ../../../frameworks/base/core/res/res/$dx/
 cd ..
 
+echo '...'
 cd $dh
 cp ic_launcher_browser.png ../../../$pa/$app/Browser/res/$mh/
 cp ic_launcher_calendar.png ../../../$pa/$app/Calendar/res/$mh/
@@ -85,5 +89,6 @@ cp ic_allapps_pressed.png ../../../$pa/$app/Trebuchet/res/$dx/
 cp ic_launcher_home.png ../../../$pa/$app/Trebuchet/res/$mx/
 cp ic_launcher_download.png ../../../$pa/providers/DownloadProvider/ui/res/$mx
 
+echo 'Done!'
 
 cd ..
