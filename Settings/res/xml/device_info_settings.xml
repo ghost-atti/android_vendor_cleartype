@@ -27,6 +27,13 @@
          <PreferenceScreen android:key="cleartype_logo"
                           android:layout="@layout/cleartype_logo_row" />
 
+        <PreferenceScreen android:key="additional_system_update_settings"
+                          android:title="@string/additional_system_update_settings_list_item_title">
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="@string/additional_system_update"
+                    android:targetClass="@string/additional_system_update_menu" />
+        </PreferenceScreen>
+
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
                 android:title="@string/device_status" 
@@ -34,15 +41,6 @@
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="com.android.settings"
                     android:targetClass="com.android.settings.deviceinfo.Status" />
-        </PreferenceScreen>
-
-        <!-- CyanogenMod Updates -->
-        <PreferenceScreen android:key="cm_updates"
-                android:title="@string/cmupdate_settings_title" 
-                android:summary="@string/cmupdate_settings_summary">
-            <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.cyanogenmod.updater"
-                    android:targetClass="com.cyanogenmod.updater.UpdatesSettings" />
         </PreferenceScreen>
 
         <!-- Change Log -->
@@ -168,8 +166,11 @@
                 android:title="@string/selinux_status"
                 android:summary="@string/selinux_status_enforcing"/>
 
-        <PreferenceScreen android:key="additional_system_update_settings"
-                          android:title="@string/additional_system_update_settings_list_item_title">
+
+        <!-- CyanogenMod Updates -->
+        <PreferenceScreen android:key="cm_updates"
+                android:title="@string/cmupdate_settings_title" 
+                android:summary="@string/cmupdate_settings_summary">
         </PreferenceScreen>
 
 </PreferenceScreen>
