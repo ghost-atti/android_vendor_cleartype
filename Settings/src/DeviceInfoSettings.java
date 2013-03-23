@@ -113,11 +113,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
 
         // Only the owner should see the Updater settings, if it exists
         if (UserHandle.myUserId() == UserHandle.USER_OWNER) {
-            removePreferenceIfPackageNotInstalled(findPreference(KEY_CM_UPDATES));
-        } else {
-            getPreferenceScreen().removePreference(findPreference(KEY_CM_UPDATES));
-        }
-
+        
         if (cpuInfo != null) {
             setStringSummary(KEY_DEVICE_CPU, cpuInfo);
         } else {
