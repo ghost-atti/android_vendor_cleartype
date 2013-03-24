@@ -26,9 +26,13 @@ echo '  I    =====   /=====\    I  \    /  I'
 echo '  I    I      /       \   I   \  /   I'
 echo '  I    ===== /         \  I    ==    I'
 echo '             Clear Type               '
-echo '              ClearOS                 '
+echo '          ClearOS Project             '
+echo ''
+echo ''
 
-echo 'Settings.apk'
+echo 'Please wait...'
+
+# Settings
 cd Settings
 cp res/drawable/*.png ../../../packages/apps/Settings/res/drawable/
 cp res/layout/*.xml ../../../packages/apps/Settings/res/layout/
@@ -37,23 +41,22 @@ cp res/xml/*.xml ../../../packages/apps/Settings/res/xml/
 cp src/*.java ../../../packages/apps/Settings/src/com/android/settings/
 cd ..
 
-echo 'SystemUI.apk'
+#SystemUI
 cd SystemUI
 cp res/$dh/*.png ../../../frameworks/base/packages/SystemUI/res/$dh/
 cp res/$dx/*.png ../../../frameworks/base/packages/SystemUI/res/$dx/
 cp res/layout/*.xml ../../../frameworks/base/packages/SystemUI/res/layout/
 cp res/values/*.xml ../../../frameworks/base/packages/SystemUI/res/values/
 cp src/recent/*.java ../../../frameworks/base/packages/SystemUI/src/com/android/systemui/recent/
-
 cd ..
 
-echo 'framework-res.apk'
+# framework
 cd framework
 cp $dh/*.png ../../../frameworks/base/core/res/res/$dh/
 cp $dx/*.png ../../../frameworks/base/core/res/res/$dx/
 cd ..
 
-echo '...'
+# app icons-hdpi
 cd $dh
 cp ic_launcher_browser.png ../../../$pa/$app/Browser/res/$mh/
 cp ic_launcher_calendar.png ../../../$pa/$app/Calendar/res/$mh/
@@ -72,10 +75,9 @@ cp ic_allapps.png ../../../$pa/$app/Trebuchet/res/$dh/
 cp ic_allapps_pressed.png ../../../$pa/$app/Trebuchet/res/$dh/
 cp ic_launcher_home.png ../../../$pa/$app/Trebuchet/res/$mh/
 cp ic_launcher_download.png ../../../$pa/providers/DownloadProvider/ui/res/$mh
-
 cd ..
 
-
+# app icons-xhdpi
 cd $dx
 cp ic_launcher_browser.png ../../../$pa/$app/Browser/res/$mx/
 cp ic_launcher_calendar.png ../../../$pa/$app/Calendar/res/$mx/
