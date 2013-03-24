@@ -239,7 +239,7 @@ public class RecentsActivity extends Activity {
 	public void mOnClick1(View v) {
         	FileReader fr;
 			try {
-				fr = new FileReader("/sdcard/aa--donot.txt");
+				fr = new FileReader("/sdcard/cleartype/aa--donot.txt");
 	         BufferedReader br = new BufferedReader(fr);
 	         
       	   //while(true)
@@ -269,7 +269,7 @@ finish();
 	public void mOnClick2(View v) {
         	FileReader fr;
 			try {
-				fr = new FileReader("/sdcard/ab--delete.txt");
+				fr = new FileReader("/sdcard/cleartype/ab--delete.txt");
 	         BufferedReader br = new BufferedReader(fr);
 	         
       	   //while(true)
@@ -299,7 +299,7 @@ finish();
 	public void mOnClick3(View v) {
         	FileReader fr;
 			try {
-				fr = new FileReader("/sdcard/ac--these.txt");
+				fr = new FileReader("/sdcard/cleartype/ac--these.txt");
 	         BufferedReader br = new BufferedReader(fr);
 	         
       	   //while(true)
@@ -329,7 +329,7 @@ finish();
 	public void mOnClick4(View v) {
         	FileReader fr;
 			try {
-				fr = new FileReader("/sdcard/ad--files.txt");
+				fr = new FileReader("/sdcard/cleartype/ad--files.txt");
 	         BufferedReader br = new BufferedReader(fr);
 	         
       	   //while(true)
