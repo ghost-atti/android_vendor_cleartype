@@ -558,24 +558,7 @@
     <string name="quick_settings_quiethours_off">Quiet hours off</string>
     <string name="quick_settings_lte">LTE</string>
     <string name="quick_settings_lte_off">LTE off</string>
-    <string name="service_foreground_processes"><xliff:g id="memory">%1$s</xliff:g> Used</string>
-    <string name="service_background_processes"><xliff:g id="memory">%1$s</xliff:g> Avail</string>
-    <string name="total_ramm"><xliff:g id="memory">%1$s</xliff:g> Total</string>
-    <string name="memory">RAM</string>
-    <string name="recents_kill_all_button_text">모두 종료</string>
-    <string name="shortcutss_button_text">바로가기</string>
-
-    <!-- Lock Screen Shortcuts -->
-    <string name="lockscreen_target_info">Drag the slider to targets to assign shortcuts</string>
-    <string name="lockscreen_target_title">Slider shortcuts</string>
-    <string name="lockscreen_target_summary">View or change custom lock screen shortcuts</string>
-    <string name="lockscreen_target_reset">Lock screen shortcuts reset to default</string>
-    <string name="lockscreen_target_save">Lock screen shortcuts saved</string>
-    <string name="lockscreen_target_reset_title">Reset</string>
-    <string name="lockscreen_target_reset_message">Delete all user created lock screen shortcuts and restore to default?</string>
-    <string name="lockscreen_target_empty">Empty</string>
-    <string name="lockscreen_target_edit_title">Edit shortcut and icon</string>
-    <string name="lockscreen_target_edit_msg">Select or change the desired application or activity and the associated icon</string>
+    <string name="quick_settings_volume">Volume</string>
 
     <!-- Text to display next to the minimal graphical battery meter.  [CHAR LIMIT=3] -->
     <string name="status_bar_settings_battery_meter_min_format" translatable="false">
@@ -592,5 +575,14 @@
     <string name="navbar_menu_conditional_button">Menu (autoHide) button</string>
     <string name="navbar_menu_always_button">Menu (alwaysShow) button</string>
     <string name="navbar_menu_big_button">Menu button</string>
+
+    <!-- CLEARTYPE ADDITIONS START -->
+    <string name="service_foreground_processes"><xliff:g id="memory">%1$s</xliff:g> Used</string>
+    <string name="service_background_processes"><xliff:g id="memory">%1$s</xliff:g> Avail</string>
+    <string name="total_ramm"><xliff:g id="memory">%1$s</xliff:g> Total</string>
+    <string name="memory">RAM</string>
+    <string name="recents_kill_all_button_text">모두 종료</string>
+    <string name="shortcutss_button_text">바로가기</string>
+    <!-- CLEARTYPE ADDITIONS END -->
 
 </resources>
