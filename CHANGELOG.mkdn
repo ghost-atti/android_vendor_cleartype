@@ -9,3 +9,4 @@ CHANGELOG (notable new features)
 
 ### alpha 2
 * Common: Android 4.2.2 (Google)
+* Common: Add cleartype Features
