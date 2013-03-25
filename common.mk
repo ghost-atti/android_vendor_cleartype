@@ -225,7 +225,12 @@ else
     endif
 endif
 
+# CLEARTYPE ADDITIONS
+CLEARTYPE_BUILDTYPE := UNOFFICIAL
+CLEARTYPE_VERSION_INFO := alpha3
+CLEARTYPE_VERSION := $(CLEARTYPE_VERSION_INFO)-$(shell date -u +%Y%m%d)-$(CLEARTYPE_BUILDTYPE)-$(CM_BUILD)
 PRODUCT_PROPERTY_OVERRIDES += \
+  ro.cleartype.version=$(CLEARTYPE_VERSION) \
   ro.cm.version=$(CM_VERSION) \
   ro.modversion=$(CM_VERSION)
 
