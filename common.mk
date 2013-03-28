@@ -69,12 +69,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dateformat=MM-dd-yyyy \
     ro.com.android.dataroaming=false
 
+ifneq ($(TARGET_BUILD_VARIANT),eng)
 # Enable ADB authentication
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
-
-# Copy over the changelog to the device
-PRODUCT_COPY_FILES += \
-    vendor/cleartype/CHANGELOG.mkdn:system/etc/CHANGELOG-CLEARTYPE.txt
+endif
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
@@ -229,10 +227,15 @@ endif
 CLEARTYPE_BUILDTYPE := UNOFFICIAL
 CLEARTYPE_VERSION_INFO := alpha3
 CLEARTYPE_VERSION := $(CLEARTYPE_VERSION_INFO)-$(shell date -u +%Y%m%d)-$(CLEARTYPE_BUILDTYPE)-$(CM_BUILD)
+
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.cleartype.version=$(CLEARTYPE_VERSION) \
   ro.cm.version=$(CM_VERSION) \
   ro.modversion=$(CM_VERSION)
+
+# Copy over the changelog to the device # CLEARTYPE
+PRODUCT_COPY_FILES += \
+    vendor/cleartype/CHANGELOG.mkdn:system/etc/CHANGELOG-CLEARTYPE.txt
 
 
 -include $(WORKSPACE)/hudson/image-auto-bits.mk
