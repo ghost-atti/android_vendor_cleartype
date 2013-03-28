@@ -26,8 +26,6 @@
     <dimen name="status_bar_recents_app_icon_max_height">48dp</dimen>
 
     <!-- Size of application thumbnail -->
-    <dimen name="status_bar_recents_thumbnail_width">100dp</dimen>
-    <dimen name="status_bar_recents_thumbnail_height">100dp</dimen>
     <dimen name="status_bar_recents_thumbnail_bg_padding">4dp</dimen>
 
     <!-- Size of application label text -->
@@ -44,8 +42,6 @@
     <dimen name="status_bar_recents_thumbnail_left_margin">20dp</dimen>
     <!-- Padding for text descriptions -->
     <dimen name="status_bar_recents_text_description_padding">8dp</dimen>
-    <!-- Width of application label text -->
-    <dimen name="status_bar_recents_app_label_width">100dip</dimen>
     <!-- Left margin of application label text -->
     <dimen name="status_bar_recents_app_label_left_margin">0dip</dimen>
     <!-- Padding between recents items -->
@@ -56,7 +52,6 @@
 
     <!-- Where to place the app icon over the thumbnail -->
     <dimen name="status_bar_recents_app_icon_left_margin">0dp</dimen>
-    <dimen name="status_bar_recents_app_icon_top_margin">0dp</dimen>
 
     <!-- Amount to offset bottom of notification peek window from top of status bar. -->
     <dimen name="peek_window_y_offset">-12dp</dimen>
@@ -216,4 +211,39 @@
     <dimen name="status_bar_battery_cluster_padding">2dip</dimen>
     <!-- The margin adjusment of the text items of the battery cluster -->
     <dimen name="status_bar_battery_cluster_text_margin">-1dip</dimen>
+
+    <!-- ==================== pie controls ==================== -->
+    <!-- Actual width/height of the trigger views placed on the UI -->
+    <dimen name="pie_trigger_height">3dp</dimen>
+    <!-- The distance a touch event must travel on the surface to trigger the pie control -->
+    <dimen name="pie_trigger_distance">8dp</dimen>
+    <!-- Padding between the pie controls and the screen border -->
+    <dimen name="pie_padding">16dp</dimen>
+
+    <!-- Radius of the snap points a the border of the screen -->
+    <dimen name="pie_snap_radius">30dp</dimen>
+    <!-- Stroke width of the snap points -->
+    <dimen name="pie_snap_outline">4dp</dimen>
+
+    <dimen name="pie_outline">2dp</dimen>
+    <!-- Text size of "normal" / small text on the pie control -->
+    <dimen name="pie_textsize">12sp</dimen>
+    <!-- Minimum size of imageviews placed within pie items -->
+    <dimen name="pie_item_size">30dp</dimen>
+
+    <dimen name="pie_navbar_radius">70dp</dimen>
+    <dimen name="pie_navbar_height">85dp</dimen>
+
+    <dimen name="pie_sysinfo_radius">165dp</dimen>
+    <dimen name="pie_sysinfo_height">85sp</dimen>
+
+    <!-- CLEARTYPE -->
+    <dimen name="status_bar_recents_thumbnail_width">100dp</dimen>
+    <dimen name="status_bar_recents_thumbnail_height">100dp</dimen>
+
+    <!-- Width of application label text -->
+    <dimen name="status_bar_recents_app_label_width">100dip</dimen>
+    <dimen name="status_bar_recents_app_icon_top_margin">0dp</dimen>
+    <!-- CLEARTYPE -->
+
 </resources>

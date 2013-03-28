@@ -74,12 +74,11 @@
             android:targetClass="com.cleartype.preferences.Mainn" />
     </header>
 
-
-    <!-- Themes -->
+    <!-- ClearType INFO -->
     <header
         android:id="@+id/cleartype_info"
         android:icon="@drawable/empty_icon"
-        android:title="CLEARTYPE INFO">
+        android:title="CLEARTYPE INFOMATION">
         <intent
             android:action="android.intent.action.MAIN"
             android:targetPackage="t.cleartype.info"
