@@ -7,9 +7,9 @@ Visit http://github.com/cleartype for full changelogs and git access.
 CHANGELOG (notable new features)
 ---------
 
+### alpha 3
+* Common: Fixed Setting Errors
+
 ### alpha 2
 * Common: Android 4.2.2 (Google)
 * Common: Add cleartype Features
-
-### alpha 3
-* Common: Fixed Setting Errors
