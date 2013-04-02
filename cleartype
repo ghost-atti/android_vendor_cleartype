@@ -42,13 +42,16 @@ cp src/*.java ../../../packages/apps/Settings/src/com/android/settings/
 cp src/cyanogenmod/*.java ../../../packages/apps/Settings/src/com/android/settings/cyanogenmod/
 cd ..
 
-#SystemUI
+# SystemUI
 cd SystemUI
 cp res/$dh/*.png ../../../frameworks/base/packages/SystemUI/res/$dh/
 cp res/$dx/*.png ../../../frameworks/base/packages/SystemUI/res/$dx/
 cp res/layout/*.xml ../../../frameworks/base/packages/SystemUI/res/layout/
+cp res/layout-sw600dp/*.xml ../../../frameworks/base/packages/SystemUI/res/layout-sw600dp/
 cp res/values/*.xml ../../../frameworks/base/packages/SystemUI/res/values/
 cp src/recent/*.java ../../../frameworks/base/packages/SystemUI/src/com/android/systemui/recent/
+cp src/statusbar/phone/*.java ../../../frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/phone/
+cp src/statusbar/tablet/*.java ../../../frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/tablet/
 cd ..
 
 # framework
