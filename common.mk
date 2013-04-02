@@ -223,8 +223,13 @@ else
     endif
 endif
 
-# CLEARTYPE ADDITIONS
-CLEARTYPE_BUILDTYPE := UNOFFICIAL
+# CLEARTYPE ADDITIONS -----------------------------------------------------------------------------
+ifdef CLEARTYPE_BUILDTYPE
+
+else
+    # If CLEARTYPE_BUILDTYPE is not defined, set to UNOFFICIAL
+    CLEARTYPE_BUILDTYPE := UNOFFICIAL
+endif
 CLEARTYPE_VERSION_INFO := alpha3
 CLEARTYPE_VERSION := $(CLEARTYPE_VERSION_INFO)-$(shell date -u +%Y%m%d)-$(CLEARTYPE_BUILDTYPE)-$(CM_BUILD)
 
@@ -236,6 +241,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/cleartype/app/info.apk:system/app/t.cleartype.info-1.apk \
     vendor/cleartype/app/preferences.apk:system/app/com.cleartype.preferences-1.apk
+
+# -------------------------------------------------------------------------------------------------
 
 # Copy over the changelog to the device # CLEARTYPE
 PRODUCT_COPY_FILES += \
