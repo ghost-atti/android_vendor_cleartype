@@ -48,4 +48,5 @@
     <drawable name="status_bar_background">#88000000</drawable>
     <drawable name="system_bar_background">#88000000</drawable>
     <drawable name="notification_icon_area_smoke">#88000000</drawable>
+
 </resources>
