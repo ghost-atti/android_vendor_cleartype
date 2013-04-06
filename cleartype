@@ -60,6 +60,7 @@ cp $dh/*.png ../../../frameworks/base/core/res/res/$dh/
 cp $dx/*.png ../../../frameworks/base/core/res/res/$dx/
 cd ..
 
+cp policy/*.java ../../frameworks/base/policy/src/com/android/internal/policy/impl/
 mv common.mk ../cm/config/
 
 # app icons-hdpi

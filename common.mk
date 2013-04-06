@@ -155,6 +155,9 @@ PRODUCT_PACKAGES += \
     CMFileManager \
     LockClock
 
+PRODUCT_PACKAGES += \
+    CellBroadcastReceiver
+
 # Extra tools in CM
 PRODUCT_PACKAGES += \
     openvpn \
@@ -242,11 +245,11 @@ PRODUCT_COPY_FILES += \
     vendor/cleartype/app/info.apk:system/app/t.cleartype.info-1.apk \
     vendor/cleartype/app/preferences.apk:system/app/com.cleartype.preferences-1.apk
 
-# -------------------------------------------------------------------------------------------------
-
 # Copy over the changelog to the device # CLEARTYPE
 PRODUCT_COPY_FILES += \
     vendor/cleartype/CHANGELOG.mkdn:system/etc/CHANGELOG-CLEARTYPE.txt
+
+# -------------------------------------------------------------------------------------------------
 
 
 -include $(WORKSPACE)/hudson/image-auto-bits.mk
