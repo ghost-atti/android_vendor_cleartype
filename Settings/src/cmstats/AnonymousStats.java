@@ -106,7 +106,7 @@ public class AnonymousStats extends SettingsPreferenceFragment
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
-        return true;
+        return false;
     }
 
     @Override

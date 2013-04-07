@@ -7,6 +7,10 @@ Visit http://github.com/cleartype for full changelogs and git access.
 CHANGELOG (notable new features)
 ---------
 
+### beta 1
+* Common: Statusbar, Lockscreen Translucent
+* Common: Delete AnonymousStats
+
 ### alpha 3
 * Common: Fixed Setting Errors
 

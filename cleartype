@@ -59,7 +59,9 @@ cd ..
 cd framework
 cp $dh/*.png ../../../frameworks/base/core/res/res/$dh/
 cp $dx/*.png ../../../frameworks/base/core/res/res/$dx/
-cp policy/*.java ../../../frameworks/base/policy/src/com/android/internal/policy/impl/
+cp policy/PhoneWindowManager.java ../../../frameworks/base/policy/src/com/android/internal/policy/impl/
+cp policy/KeyguardViewManager.java ../../../frameworks/base/policy/src/com/android/internal/policy/impl/keyguard/
+cp services/WindowAnimator.java ../../../frameworks/base/services/java/com/android/server/wm/
 cp logo/*.java ../../../frameworks/base/core/java/com/android/internal/app/
 cp logo/*.png ../../../frameworks/base/core/res/res/drawable-nodpi/
 cd ..
