@@ -68,7 +68,7 @@ public class PlatLogoActivity extends Activity {
         if (cmVersion != null) {
             cmVersion = cmVersion.replaceAll("([0-9\\.]+?)-.*", "$1");
         }
-        String coVersion = "beta1"
+        String coVersion = "beta1";
 
         TextView tv = new TextView(this);
         if (light != null) tv.setTypeface(light);
