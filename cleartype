@@ -40,6 +40,7 @@ cp res/values-ko/*.xml ../../../packages/apps/Settings/res/values-ko/
 cp res/xml/*.xml ../../../packages/apps/Settings/res/xml/
 cp src/*.java ../../../packages/apps/Settings/src/com/android/settings/
 cp src/cyanogenmod/*.java ../../../packages/apps/Settings/src/com/android/settings/cyanogenmod/
+cp src/cmstats/*.java ../../../packages/apps/Settings/src/com/android/settings/cmstats/
 cd ..
 
 # SystemUI
@@ -58,9 +59,11 @@ cd ..
 cd framework
 cp $dh/*.png ../../../frameworks/base/core/res/res/$dh/
 cp $dx/*.png ../../../frameworks/base/core/res/res/$dx/
+cp policy/*.java ../../../frameworks/base/policy/src/com/android/internal/policy/impl/
+cp logo/*.java ../../../frameworks/base/core/java/com/android/internal/app/
+cp logo/*.png ../../../frameworks/base/core/res/res/drawable-nodpi/
 cd ..
 
-cp policy/*.java ../../frameworks/base/policy/src/com/android/internal/policy/impl/
 mv common.mk ../cm/config/
 
 # app icons-hdpi
