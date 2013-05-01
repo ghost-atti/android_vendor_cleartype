@@ -18,7 +18,6 @@ package com.android.settings.cyanogenmod;
 
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.RemoteException;
@@ -35,9 +34,6 @@ import android.view.WindowManagerGlobal;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class SystemSettings extends SettingsPreferenceFragment  implements
         Preference.OnPreferenceChangeListener {
@@ -80,6 +76,15 @@ public class SystemSettings extends SettingsPreferenceFragment  implements
 
         IWindowManager windowManager = IWindowManager.Stub.asInterface(
                 ServiceManager.getService(Context.WINDOW_SERVICE));
+        try {
+            if (windowManager.hasNavigationBar()) {
+                removeKeys = true;
+            } else {
+                removeNavbar = true;
+            }
+        } catch (RemoteException e) {
+            // Do nothing
+        }
 
         // Determine which user is logged in
         mIsPrimary = UserHandle.myUserId() == UserHandle.USER_OWNER;
@@ -132,7 +137,7 @@ public class SystemSettings extends SettingsPreferenceFragment  implements
         //if (mPieControl != null && removeNavbar) {
             // Remove on devices without a navbar to start with
             //prefScreen.removePreference(mPieControl);
-            //mPieControl = null;
+          //  mPieControl = null;
         //}
 
         // Expanded desktop
@@ -224,24 +229,6 @@ public class SystemSettings extends SettingsPreferenceFragment  implements
         } else {
             mPieControl.setSummary(getString(R.string.pie_control_disabled));
         }
-    }
-
-    private boolean removePreferenceIfPackageNotInstalled(Preference preference) {
-        String intentUri = ((PreferenceScreen) preference).getIntent().toUri(1);
-        Pattern pattern = Pattern.compile("component=([^/]+)/");
-        Matcher matcher = pattern.matcher(intentUri);
-
-        String packageName = matcher.find() ? matcher.group(1) : null;
-        if (packageName != null) {
-            try {
-                getPackageManager().getPackageInfo(packageName, 0);
-            } catch (NameNotFoundException e) {
-                Log.e(TAG, "package " + packageName + " not installed, hiding preference.");
-                getPreferenceScreen().removePreference(preference);
-                return true;
-            }
-        }
-        return false;
     }
 
     private void updateExpandedDesktop(int value) {

@@ -30,6 +30,7 @@
     <drawable name="notification_header_bg">#FF000000</drawable>
 
     <!-- ==================== system bar only ==================== -->
+    <!-- the darkening filter applied to notifications -->
     <color name="notification_panel_scrim_color">#B0000000</color>
 
     <!-- ==================== pie controls ==================== -->
