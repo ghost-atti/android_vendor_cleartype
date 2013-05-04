@@ -40,6 +40,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import android.widget.ImageView;
+import android.widget.ImageButton;
 
 import com.android.systemui.R;
 import com.android.systemui.statusbar.tablet.StatusBarPanel;
@@ -205,35 +207,132 @@ public class RecentsActivity extends Activity {
         registerReceiver(mIntentReceiver, mIntentFilter);
         super.onCreate(savedInstanceState);
 
-    Button btn1 = (Button)findViewById(R.id.select1);
+    ImageButton btn1 = (ImageButton)findViewById(R.id.select1);
 		btn1.setOnClickListener(new Button.OnClickListener() {
 			public void onClick(View v) {
 					mOnClick1(v);
 
 			}
 		});
-    Button btn2 = (Button)findViewById(R.id.select2);
+    ImageButton btn2 = (ImageButton)findViewById(R.id.select2);
 		btn2.setOnClickListener(new Button.OnClickListener() {
 			public void onClick(View v) {
 					mOnClick2(v);
 
 			}
 		});
-    Button btn3 = (Button)findViewById(R.id.select3);
+    ImageButton btn3 = (ImageButton)findViewById(R.id.select3);
 		btn3.setOnClickListener(new Button.OnClickListener() {
 			public void onClick(View v) {
 					mOnClick3(v);
 
 			}
 		});
-    Button btn4 = (Button)findViewById(R.id.select4);
+    ImageButton btn4 = (ImageButton)findViewById(R.id.select4);
 		btn4.setOnClickListener(new Button.OnClickListener() {
 			public void onClick(View v) {
 					mOnClick4(v);
 
 			}
 		});
-    }
+
+        	FileReader fr;
+		try {
+			fr = new FileReader("/sdcard/cleartype/aa--donot.txt");
+	         	BufferedReader br = new BufferedReader(fr);
+	         
+
+			try {
+				String str = br.readLine();
+PackageManager	packageManager = this.getPackageManager();
+		try {
+			((ImageView) this.findViewById(R.id.select1)).setImageDrawable(packageManager.getApplicationIcon(str));
+		} catch (NameNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} 
+      	    	} catch (FileNotFoundException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		} 
+
+		try {
+			fr = new FileReader("/sdcard/cleartype/ab--delete.txt");
+	         	BufferedReader br = new BufferedReader(fr);
+	         
+
+			try {
+				String str = br.readLine();
+PackageManager	packageManager = this.getPackageManager();
+		try {
+			((ImageView) this.findViewById(R.id.select2)).setImageDrawable(packageManager.getApplicationIcon(str));
+		} catch (NameNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} 
+      	    	} catch (FileNotFoundException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+
+		try {
+			fr = new FileReader("/sdcard/cleartype/ac--these.txt");
+	         	BufferedReader br = new BufferedReader(fr);
+	         
+
+			try {
+				String str = br.readLine();
+PackageManager	packageManager = this.getPackageManager();
+		try {
+			((ImageView) this.findViewById(R.id.select3)).setImageDrawable(packageManager.getApplicationIcon(str));
+		} catch (NameNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} 
+      	    	} catch (FileNotFoundException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+
+		try {
+			fr = new FileReader("/sdcard/cleartype/ad--files.txt");
+	         	BufferedReader br = new BufferedReader(fr);
+	         
+
+			try {
+				String str = br.readLine();
+PackageManager	packageManager = this.getPackageManager();
+		try {
+			((ImageView) this.findViewById(R.id.select4)).setImageDrawable(packageManager.getApplicationIcon(str));
+		} catch (NameNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} 
+      	    	} catch (FileNotFoundException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+}
 
 
 	public void mOnClick1(View v) {
@@ -242,8 +341,7 @@ public class RecentsActivity extends Activity {
 				fr = new FileReader("/sdcard/cleartype/aa--donot.txt");
 	         BufferedReader br = new BufferedReader(fr);
 	         
-      	   //while(true)
-      	   //{
+
 				try {
 					String str = br.readLine();
 PackageManager pm = getPackageManager();
@@ -255,9 +353,9 @@ finish();
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
-				} //의 리턴타입은 String 이다, 파일끝을 만날경우 null을 리턴한다
-      	    //if(str == null){break;}
-      	   //}
+				} 
+      	    
+
 			} catch (FileNotFoundException e2) {
 				// TODO Auto-generated catch block
 				e2.printStackTrace();
@@ -272,8 +370,7 @@ finish();
 				fr = new FileReader("/sdcard/cleartype/ab--delete.txt");
 	         BufferedReader br = new BufferedReader(fr);
 	         
-      	   //while(true)
-      	   //{
+
 				try {
 					String str = br.readLine();
 PackageManager pm = getPackageManager();
@@ -285,9 +382,9 @@ finish();
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
-				} //의 리턴타입은 String 이다, 파일끝을 만날경우 null을 리턴한다
-      	    //if(str == null){break;}
-      	   //}
+				} 
+      	    
+
 			} catch (FileNotFoundException e2) {
 				// TODO Auto-generated catch block
 				e2.printStackTrace();
@@ -302,8 +399,7 @@ finish();
 				fr = new FileReader("/sdcard/cleartype/ac--these.txt");
 	         BufferedReader br = new BufferedReader(fr);
 	         
-      	   //while(true)
-      	   //{
+
 				try {
 					String str = br.readLine();
 PackageManager pm = getPackageManager();
@@ -315,9 +411,9 @@ finish();
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
-				} //의 리턴타입은 String 이다, 파일끝을 만날경우 null을 리턴한다
-      	    //if(str == null){break;}
-      	   //}
+				} 
+      	    
+
 			} catch (FileNotFoundException e2) {
 				// TODO Auto-generated catch block
 				e2.printStackTrace();
@@ -332,8 +428,7 @@ finish();
 				fr = new FileReader("/sdcard/cleartype/ad--files.txt");
 	         BufferedReader br = new BufferedReader(fr);
 	         
-      	   //while(true)
-      	   //{
+
 				try {
 					String str = br.readLine();
 PackageManager pm = getPackageManager();
@@ -345,9 +440,7 @@ finish();
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
-				} //의 리턴타입은 String 이다, 파일끝을 만날경우 null을 리턴한다
-      	    //if(str == null){break;}
-      	   //}
+				} 
 			} catch (FileNotFoundException e2) {
 				// TODO Auto-generated catch block
 				e2.printStackTrace();
