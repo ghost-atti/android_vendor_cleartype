@@ -74,17 +74,17 @@ public class SystemSettings extends SettingsPreferenceFragment  implements
         boolean removeKeys = false;
         boolean removeNavbar = false;
 
-        IWindowManager windowManager = IWindowManager.Stub.asInterface(
-                ServiceManager.getService(Context.WINDOW_SERVICE));
-        try {
-            if (windowManager.hasNavigationBar()) {
-                removeKeys = true;
-            } else {
-                removeNavbar = true;
-            }
-        } catch (RemoteException e) {
+        //IWindowManager windowManager = IWindowManager.Stub.asInterface(
+                //ServiceManager.getService(Context.WINDOW_SERVICE));
+        //try {
+            //if (windowManager.hasNavigationBar()) {
+                //removeKeys = true;
+            //} else {
+                //removeNavbar = true;
+            //}
+        //} catch (RemoteException e) {
             // Do nothing
-        }
+        //}
 
         // Determine which user is logged in
         mIsPrimary = UserHandle.myUserId() == UserHandle.USER_OWNER;
