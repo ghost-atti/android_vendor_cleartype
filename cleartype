@@ -37,6 +37,7 @@ cd Settings
 cp res/drawable/*.png ../../../packages/apps/Settings/res/drawable/
 cp res/layout/*.xml ../../../packages/apps/Settings/res/layout/
 cp res/values-ko/*.xml ../../../packages/apps/Settings/res/values-ko/
+cp res/values/*.xml ../../../packages/apps/Settings/res/values/
 cp res/xml/*.xml ../../../packages/apps/Settings/res/xml/
 cp src/*.java ../../../packages/apps/Settings/src/com/android/settings/
 cp src/cyanogenmod/*.java ../../../packages/apps/Settings/src/com/android/settings/cyanogenmod/
