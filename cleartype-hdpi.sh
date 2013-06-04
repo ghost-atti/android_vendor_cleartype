@@ -20,6 +20,7 @@ dh=drawable-hdpi
 dx=drawable-xhdpi
 mh=mipmap-hdpi
 mx=mipmap-xhdpi
+
 echo '=====  =====     ===      ==        =='
 echo '  I    I        /   \     I \      / I'
 echo '  I    =====   /=====\    I  \    /  I'

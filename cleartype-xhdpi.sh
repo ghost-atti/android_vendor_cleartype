@@ -20,6 +20,7 @@ dh=drawable-hdpi
 dx=drawable-xhdpi
 mh=mipmap-hdpi
 mx=mipmap-xhdpi
+
 echo '=====  =====     ===      ==        =='
 echo '  I    I        /   \     I \      / I'
 echo '  I    =====   /=====\    I  \    /  I'
@@ -50,7 +51,7 @@ cd SystemUI
 cp res/$dh/*.png ../../../frameworks/base/packages/SystemUI/res/$dh/
 cp res/$dx/*.png ../../../frameworks/base/packages/SystemUI/res/$dx/
 cp res/layout-xhdpi/*.xml ../../../frameworks/base/packages/SystemUI/res/layout/
-cp res/layout-sw600dp-xhdpi/*.xml ../../../frameworks/base/packages/SystemUI/res/layout-sw600dp/
+cp res/layout-sw600dp/*.xml ../../../frameworks/base/packages/SystemUI/res/layout-sw600dp/
 cp res/values/colors.xml ../../../frameworks/base/packages/SystemUI/res/values/
 cp res/values/strings.xml ../../../frameworks/base/packages/SystemUI/res/values/
 cp res/values-xhdpi/*.xml ../../../frameworks/base/packages/SystemUI/res/values/

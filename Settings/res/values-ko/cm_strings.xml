@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2013 The CyanogenMod Project
+<!-- Copyright (C) 2012-2013 The CyanogenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -213,7 +213,7 @@
     <string name="icon_picker_gallery">갤러리</string>
     <string name="icon_picker_google_small">Google (소형)</string>
     <string name="icon_picker_googleplus">Google Plus</string>
-    <string name="icon_picker_googletalk">Google 토크</string>
+    <string name="icon_picker_googletalk">Hangouts</string>
     <string name="icon_picker_maps">지도</string>
     <string name="icon_picker_movie">영화</string>
     <string name="icon_picker_music">음악</string>
