@@ -374,10 +374,14 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     boolean mHasMenuKey;
     boolean mHasAssistKey;
     boolean mHasAppSwitchKey;
+    boolean mHasMenuKeyEnabled;
 
     // The last window we were told about in focusChanged.
     WindowState mFocusedWindow;
     IApplicationToken mFocusedApp;
+
+    // Behavior of home wake
+    boolean mHomeWakeScreen;
 
     // Behavior of volume wake
     boolean mVolumeWakeScreen;
@@ -623,6 +627,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.Secure.getUriFor(
                     Settings.Secure.RING_HOME_BUTTON_BEHAVIOR), false, this,
+                    UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.HOME_WAKE_SCREEN), false, this,
                     UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.VOLUME_WAKE_SCREEN), false, this,
@@ -1326,6 +1333,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     Settings.Secure.RING_HOME_BUTTON_BEHAVIOR,
                     Settings.Secure.RING_HOME_BUTTON_BEHAVIOR_DEFAULT,
                     UserHandle.USER_CURRENT);
+            mHomeWakeScreen = (Settings.System.getIntForUser(resolver,
+                    Settings.System.HOME_WAKE_SCREEN, 1, UserHandle.USER_CURRENT) == 1);
             mVolumeWakeScreen = (Settings.System.getIntForUser(resolver,
                     Settings.System.VOLUME_WAKE_SCREEN, 0, UserHandle.USER_CURRENT) == 1);
             mVolBtnMusicControls = (Settings.System.getIntForUser(resolver,
@@ -1333,6 +1342,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
 
             boolean keyRebindingEnabled = Settings.System.getInt(resolver,
                     Settings.System.HARDWARE_KEY_REBINDING, 0) == 1;
+
+            mHasMenuKeyEnabled = false;
 
             if (!keyRebindingEnabled) {
                 if (mHasHomeKey) {
@@ -1349,6 +1360,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     } else {
                         mLongPressOnMenuBehavior = KEY_ACTION_SEARCH;
                     }
+                    mHasMenuKeyEnabled = true;
                 }
                 if (mHasAssistKey) {
                     mPressOnAssistBehavior = KEY_ACTION_SEARCH;
@@ -1367,6 +1379,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                         mLongPressOnHomeBehavior = Settings.System.getInt(resolver,
                                 Settings.System.KEY_HOME_LONG_PRESS_ACTION, KEY_ACTION_APP_SWITCH);
                     }
+                    mHasMenuKeyEnabled = (mLongPressOnHomeBehavior == KEY_ACTION_MENU);
                 }
                 if (mHasMenuKey) {
                     mPressOnMenuBehavior = Settings.System.getInt(resolver,
@@ -1378,18 +1391,24 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                         mLongPressOnMenuBehavior = Settings.System.getInt(resolver,
                                 Settings.System.KEY_MENU_LONG_PRESS_ACTION, KEY_ACTION_SEARCH);
                     }
+                    mHasMenuKeyEnabled |= (mPressOnMenuBehavior == KEY_ACTION_MENU) ||
+                        (mLongPressOnMenuBehavior == KEY_ACTION_MENU);
                 }
                 if (mHasAssistKey) {
                     mPressOnAssistBehavior = Settings.System.getInt(resolver,
                             Settings.System.KEY_ASSIST_ACTION, KEY_ACTION_SEARCH);
                     mLongPressOnAssistBehavior = Settings.System.getInt(resolver,
                             Settings.System.KEY_ASSIST_LONG_PRESS_ACTION, KEY_ACTION_VOICE_SEARCH);
+                    mHasMenuKeyEnabled |= (mPressOnAssistBehavior == KEY_ACTION_MENU) ||
+                        (mLongPressOnAssistBehavior == KEY_ACTION_MENU);
                 }
                 if (mHasAppSwitchKey) {
                     mPressOnAppSwitchBehavior = Settings.System.getInt(resolver,
                             Settings.System.KEY_APP_SWITCH_ACTION, KEY_ACTION_APP_SWITCH);
                     mLongPressOnAppSwitchBehavior = Settings.System.getInt(resolver,
                             Settings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION, KEY_ACTION_NOTHING);
+                    mHasMenuKeyEnabled |= (mPressOnAppSwitchBehavior == KEY_ACTION_MENU) ||
+                        (mLongPressOnAppSwitchBehavior == KEY_ACTION_MENU);
                 }
             }
 
@@ -3922,6 +3941,17 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 }
                 break;
             }
+            case KeyEvent.KEYCODE_HOME:
+                if (down && !isScreenOn && mHomeWakeScreen) {
+                    if (keyguardActive) {
+                        // If the keyguard is showing, let it wake the device when ready.
+                        mKeyguardMediator.onWakeKeyWhenKeyguardShowingTq(keyCode);
+                    } else {
+                        // Otherwise, wake the device ourselves.
+                        result |= ACTION_WAKE_UP;
+                    }
+                }
+                break;
             case KeyEvent.KEYCODE_VOLUME_DOWN:
             case KeyEvent.KEYCODE_VOLUME_UP:
             case KeyEvent.KEYCODE_VOLUME_MUTE: {
@@ -4166,6 +4196,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             case KeyEvent.KEYCODE_MEDIA_RECORD:
             case KeyEvent.KEYCODE_MEDIA_FAST_FORWARD:
             case KeyEvent.KEYCODE_CAMERA:
+                return false;
+
+            // home wake can be configurable so default to no here
+            case KeyEvent.KEYCODE_HOME:
                 return false;
         }
         return true;
@@ -5172,6 +5206,11 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     // overridden by qemu.hw.mainkeys in the emulator.
     public boolean hasNavigationBar() {
         return mHasNavigationBar;
+    }
+
+    @Override
+    public boolean hasMenuKeyEnabled() {
+        return mHasMenuKeyEnabled;
     }
 
     @Override
