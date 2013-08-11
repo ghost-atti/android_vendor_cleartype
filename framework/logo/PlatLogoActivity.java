@@ -68,14 +68,14 @@ public class PlatLogoActivity extends Activity {
         if (cmVersion != null) {
             cmVersion = cmVersion.replaceAll("([0-9\\.]+?)-.*", "$1");
         }
-        String coVersion = "beta1";
+        String coVersion = "Stable1";
 
         TextView tv = new TextView(this);
         if (light != null) tv.setTypeface(light);
         tv.setTextSize(1.25f*size);
         tv.setTextColor(0xFFFFFFFF);
         tv.setShadowLayer(4*metrics.density, 0, 2*metrics.density, 0x66000000);
-        tv.setText(mIsCid ? "ClearOS " + coVersion : "Android " + Build.VERSION.RELEASE);
+        tv.setText(mIsCid ? "ClearTune " + coVersion : "Android " + Build.VERSION.RELEASE);
         view.addView(tv, lp);
 
         tv = new TextView(this);
