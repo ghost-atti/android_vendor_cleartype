@@ -46,6 +46,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 
 import com.android.internal.R;
+import com.android.internal.util.cm.TorchConstants;
 import com.android.internal.widget.LockPatternUtils;
 
 /**
@@ -228,14 +229,17 @@ public class KeyguardViewManager {
                     if (mKeyguardView.handleBackKey()) {
                         return true;
                     }
+                    break;
                 case KeyEvent.KEYCODE_HOME:
                     if (mKeyguardView.handleHomeKey()) {
                         return true;
                     }
+                    break;
                 case KeyEvent.KEYCODE_MENU:
                     if (mKeyguardView.handleMenuKey()) {
                         return true;
                     }
+                    break;
             }
         }
         return false;
@@ -327,6 +331,7 @@ public class KeyguardViewManager {
             int flags = WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
                     | WindowManager.LayoutParams.FLAG_LAYOUT_INSET_DECOR
                     | WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN
+                    | WindowManager.LayoutParams.FLAG_SHOW_WALLPAPER
                     | WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED;
 
             if (!mNeedsInput) {
