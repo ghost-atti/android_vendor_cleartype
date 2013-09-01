@@ -14,12 +14,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+echo " C L E A R . T Y P E . P A T C H "
 cd vendor/cleartype
 
 ./cleartype
 
 cd ../..
 
+echo " C M . P A T C H "
+cd vendor/cm
+
+./get-prebuilts
+
+cd ../..
+
+echo " Start Build "
 . build/envsetup.sh
 
 brunch

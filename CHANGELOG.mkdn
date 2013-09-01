@@ -9,6 +9,7 @@ CHANGELOG (notable new features)
 
 ### beta 2
 * Common: Update to new Source.
+* add Google IME
 
 ### beta 1
 * Common: Statusbar, Lockscreen Translucent

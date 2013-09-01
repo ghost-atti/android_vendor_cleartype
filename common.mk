@@ -222,8 +222,8 @@ ifdef CM_BUILDTYPE
     endif
 else
     # If CM_BUILDTYPE is not defined, set to UNOFFICIAL
-    CM_BUILDTYPE := UNOFFICIAL
-    CM_EXTRAVERSION :=
+    CM_BUILDTYPE := ClearTYPE
+    CM_EXTRAVERSION := Beta2
 endif
 
 ifdef CM_RELEASE
@@ -243,7 +243,7 @@ else
     # If CLEARTYPE_BUILDTYPE is not defined, set to UNOFFICIAL
     CLEARTYPE_BUILDTYPE := UNOFFICIAL
 endif
-CLEARTYPE_VERSION_INFO := beta1
+CLEARTYPE_VERSION_INFO := beta2
 CLEARTYPE_VERSION := $(CLEARTYPE_VERSION_INFO)-$(shell date -u +%Y%m%d)-$(CLEARTYPE_BUILDTYPE)-$(CM_BUILD)
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -252,8 +252,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.modversion=$(CM_VERSION)
 
 PRODUCT_COPY_FILES += \
-    vendor/cleartype/app/info.apk:system/app/t.cleartype.info-1.apk \
-    vendor/cleartype/app/preferences.apk:system/app/com.cleartype.preferences-1.apk
+    vendor/cleartype/prebuilts/app/preferences.apk:system/app/com.cleartype.preferences-1.apk \
+    vendor/cleartype/prebuilts/app/GoogleIME_Kor.apk:system/app/GoogleIME_Kor.apk \
+    vendor/cleartype/prebuilts/lib/libjni_koreanime.so:system/lib/libjni_koreanime.so
+#    vendor/cleartype/prebuilts/app/info.apk:system/app/t.cleartype.info-1.apk \
 
 # Copy over the changelog to the device # CLEARTYPE
 PRODUCT_COPY_FILES += \

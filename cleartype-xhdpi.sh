@@ -71,7 +71,7 @@ cp logo/*.java ../../../frameworks/base/core/java/com/android/internal/app/
 cp logo/*.png ../../../frameworks/base/core/res/res/drawable-nodpi/
 cd ..
 
-mv common.mk ../cm/config/
+cp common.mk ../cm/config/
 
 # app icons-hdpi
 cd $dh
