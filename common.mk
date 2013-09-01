@@ -222,8 +222,8 @@ ifdef CM_BUILDTYPE
     endif
 else
     # If CM_BUILDTYPE is not defined, set to UNOFFICIAL
-    CM_BUILDTYPE := ClearTYPE
-    CM_EXTRAVERSION := Beta2
+    CM_BUILDTYPE := UNOFFICIAL
+    CM_EXTRAVERSION := 
 endif
 
 ifdef CM_RELEASE
